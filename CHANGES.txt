@@ -1,0 +1,25 @@
+REFERENCE:
+https://github.com/dialogflow/dialogflow-android-client/
+
+Please view license from the source on file named LICENSE.
+
+Changes on the files are commented on top of each file.
+More references on each file.
+General changes:
+	Changed module and package name
+	Added all drawable files.
+	Changed application logo
+	Removed
+		AIButtonSampleActivity.java
+		AISampleAppWidget.java
+		AIServiceSampleActivity.java
+		AISettingsActivity.java
+		AITextSampleActivity.java
+		AIWidgetActivity.java
+		MainActivity.java
+		activity_aibutton_sample.xml
+		activity_aidialog_sample.xml
+		activity_aiservice_sample.xml
+		activity_aitext_sample.xml
+		activity_widget_sample.xml
+		menu_aiservice_sample.xml

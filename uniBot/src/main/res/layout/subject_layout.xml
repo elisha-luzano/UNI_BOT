@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Created this new file
+-->
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:background="#efcb28"
+            android:maxWidth="205dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:text="hi man, how are you?"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:paddingLeft="20dp"
+            android:textSize="10dp"
+            android:background="#e8e8e8"/>
+
+        <TextView
+            android:id="@+id/absences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:paddingLeft="20dp"
+            android:textSize="9dp"
+            android:paddingBottom = "1dp"
+            android:background="#e8e8e8"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

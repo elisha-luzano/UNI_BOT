@@ -1,0 +1,15 @@
+<!--
+    Removed settings
+    Added what can I do, help, delete all messages
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ai.api.uni.AIButtonSampleActivity">
+    <item android:id="@+id/what_can_i_do" android:title="What Can I Do?"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/help" android:title="Help"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_delete_messages" android:title="Delete All Messages"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

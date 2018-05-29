@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ai.api.uni"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Added newly created activities into manifest
+        Added permissions
+        Changed initial activity from ChatActivity to ChatActivity
+    -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <uses-sdk tools:overrideLibrary="com.twitter.sdk.android, com.twitter.sdk.android.tweetui,
+    com.twitter.sdk.android.core, com.twitter.sdk.android.tweetcomposer,
+    android.support.constraint, com.google.android.gms.location.places,
+        com.google.android.gms.places.license,
+        com.google.android.gms.nearby,
+        com.google.android.gms.nearby.license,
+        com.google.android.gms.maps,
+        com.google.android.gms.maps.license,
+        com.google.android.gms.location,
+        com.google.android.gms.base,
+        com.google.android.gms.base.license,
+        com.google.android.gms.tasks,
+        com.google.android.gms,
+        android.support.v4,
+        android.support.fragment,
+        android.support.mediacompat,
+        android.support.coreui,
+        android.support.coreutils,
+        android.support.compat,
+        com.google.android.gms.common.license,
+        com.google.android.gms.tasks.license,
+        com.google.android.gms.location.license,
+        android.support.v7.appcompat,
+        android.support.graphics.drawable,
+        android.support.v7.recyclerview,
+        com.facebook,
+        com.facebook.login,
+        com.facebook.share,
+        com.facebook.common,
+        android.support.graphics.drawable.animated,
+        android.support.v7.cardview,
+        android.support.customtabs,
+        com.facebook.places,
+        com.facebook.applinks,
+        com.facebook.messenger,
+        com.facebook.core,
+        android.arch.lifecycle"/>
+
+    <resources>
+        <string android:name="com.twitter.sdk.android.CONSUMER_KEY">twitter_consumer_key</string>
+        <string android:name="com.twitter.sdk.android.CONSUMER_SECRET">twitter_consumer_secret</string>
+    </resources>
+
+
+    <string android:name="com.twitter.sdk.android.CONSUMER_KEY">twitter_consumer_key</string>
+    <string android:name="com.twitter.sdk.android.CONSUMER_SECRET">twitter_consumer_secret</string>
+
+
+    <application
+        android:name="ai.api.uni.AIApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+
+
+
+        <receiver android:name="ai.api.uni.Model.Alarm" android:exported="true">
+            <intent-filter>
+                <action android:name="ai.api.sample.START_ALARM" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="google_api_key"/>
+
+        <!--<meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>-->
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="ai.api.uni.Activity.ChatActivity"
+            android:theme="@style/SplashTheme"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.PhotoActivity"
+            android:label="Gallery"
+            android:parentActivityName="ai.api.uni.Activity.PhotoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.PhotoLargeActivity"
+            android:label="Photo"
+            android:parentActivityName="ai.api.uni.Activity.PhotoLargeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+
+        <activity
+            android:name="ai.api.uni.Activity.MapsActivity"
+            android:label="mapsactivity"
+            android:parentActivityName="ai.api.uni.Activity.MapsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.HelpActivity"
+            android:label="Help"
+            android:parentActivityName="ai.api.uni.Activity.HelpActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.HelpActivity2"
+            android:label="Help"
+            android:parentActivityName="ai.api.uni.Activity.HelpActivity2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.HelpActivity3"
+            android:label="Help"
+            android:parentActivityName="ai.api.uni.Activity.HelpActivity3">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.FeeUpdateActivity"
+            android:label="Pay Bills"
+            android:parentActivityName="ai.api.uni.Activity.FeeUpdateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.ExpensesUpdateActivity"
+            android:label="Update Expenses"
+            android:parentActivityName="ai.api.uni.Activity.ExpensesUpdateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+        <activity
+            android:name="ai.api.uni.Activity.AttendanceUpdateActivity"
+            android:label="Update Attendance"
+            android:parentActivityName="ai.api.uni.Activity.AttendanceUpdateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ai.api.uni.Activity.ChatActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
